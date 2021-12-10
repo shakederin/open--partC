@@ -13,4 +13,13 @@ export interface Patient {
     "occupation": string;
 }
 
-export type OmitedData = Omit<Patient, "ssn">[]
+// export type newPatientEntery = Omit<Patient, "id">
+
+export type OmitedData = Omit<Patient, "ssn">[];
+export type Fields = {
+    name: unknown,
+    dateOfBirth: unknown,
+    ssn?: unknown,
+    gender: unknown,
+    occupation: unknown,
+};
