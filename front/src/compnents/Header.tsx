@@ -1,24 +1,13 @@
-import React, { FC } from "react";
-import PropTypes from "prop-types"
+import React from "react";
 
-
-// const Header: FC<HeadeLine> = (props) =>{
-//     console.log(props);
-    
-//     return(
-//         <h1>{"courseName"}</h1>
-//     )
-// }
-function Header(props: HeadeLine) {
-    console.log(props);
-    
-    return(
-        <h1>{"courseName"}</h1>
-    )
+interface props {
+    courseName: string
 }
 
-interface HeadeLine {
-    courseName: string
+function Header(props: props): JSX.Element  {
+    return(
+        <h1>{props.courseName}</h1>
+    );
 }
 
 export default Header;

@@ -1,6 +1,6 @@
 import { Patient } from "./types";
 import type {OmitedData, Fields} from "./types";
-import { v4  } from 'uuid';
+import { v4 } from 'uuid';
 
 export const notSensitiveData = (patients: Patient[] ): OmitedData => {
     const notSensitiveDataArray  = [];

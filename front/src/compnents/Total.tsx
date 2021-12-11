@@ -1,15 +1,17 @@
 import React from "react";
-import { Course } from "../types";
-function Total(props:Course[]){
-    const array = Object.entries(props);
+import { CoursePart } from "../types";
+
+
+function Total(props: {courseParts : CoursePart[]}){
+    const array = props.courseParts;
     let total = 0;
     array.map((course)=>{
-        total += course[1].exerciseCount;
+        total += course.exerciseCount;
     })
     return(
-        <p>
+        <h2>
         Number of exercises {total}
-      </p>
+        </h2>
     )
 }
 

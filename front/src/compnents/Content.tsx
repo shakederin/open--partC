@@ -1,22 +1,19 @@
 import React from "react";
-import { Course } from "../types";
-function Content(props: Course[] ){
-    const array = Object.entries(props);
-    const dataArray = array.map((array)=>{
-        return array[1]
+import { PropsCoursePart, CoursePart } from "../types";
+import Part from "./Part";
+
+function Content(props: PropsCoursePart){
+
+    function createPart(data: CoursePart[]){
+        const returnData = data.map((course, index)=>{
+            return <Part key={index} coursePart={course}/>
+        })
+        return returnData;
     }
-    )   
+
     return(
         <div>
-            <p>
-                {dataArray[0].name} {dataArray[0].exerciseCount}
-            </p>
-            <p>
-                {dataArray[1].name} {dataArray[1].exerciseCount}
-            </p>
-            <p>
-                {dataArray[2].name} {dataArray[2].exerciseCount}
-            </p>
+           {createPart(props.courseParts)}
         </div>
     )
 }
